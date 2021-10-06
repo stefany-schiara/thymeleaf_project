@@ -8,7 +8,7 @@ import javax.persistence.*;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "FUNCIONARIOS")
-public class Funcionario extends AbstractEntity<Long> {
+public class FuncionarioE extends AbstractEntity<Long> {
 
 	@Column(nullable = false, unique = true)
 	private String nome;
@@ -24,11 +24,11 @@ public class Funcionario extends AbstractEntity<Long> {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "endereco_id_fk")
-	private Endereco endereco;
+	private EnderecoE endereco;
 	
 	@ManyToOne
 	@JoinColumn(name = "cargo_id_fk")
-	private Cargo cargo;
+	private CargoE cargo;
 
 	public String getNome() {
 		return nome;
@@ -62,19 +62,19 @@ public class Funcionario extends AbstractEntity<Long> {
 		this.dataSaida = dataSaida;
 	}
 
-	public Endereco getEndereco() {
+	public EnderecoE getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(Endereco endereco) {
+	public void setEndereco(EnderecoE endereco) {
 		this.endereco = endereco;
 	}
 
-	public Cargo getCargo() {
+	public CargoE getCargo() {
 		return cargo;
 	}
 
-	public void setCargo(Cargo cargo) {
+	public void setCargo(CargoE cargo) {
 		this.cargo = cargo;
 	}
 	

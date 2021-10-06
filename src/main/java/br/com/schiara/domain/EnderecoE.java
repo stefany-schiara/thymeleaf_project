@@ -2,10 +2,12 @@ package br.com.schiara.domain;
 
 import javax.persistence.*;
 
+import br.com.schiara.enums.EnumUf;
+
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "ENDERECOS")
-public class Endereco extends AbstractEntity<Long> {
+public class EnderecoE extends AbstractEntity<Long> {
 
 	@Column(nullable = false)
 	private String logradouro;
@@ -18,7 +20,7 @@ public class Endereco extends AbstractEntity<Long> {
 	
 	@Column(nullable = false, length = 2)
 	@Enumerated(EnumType.STRING)
-	private UF uf;
+	private EnumUf uf;
 	
 	@Column(nullable = false, length = 9)
 	private String cep;
@@ -52,11 +54,11 @@ public class Endereco extends AbstractEntity<Long> {
 		this.cidade = cidade;
 	}
 
-	public UF getUf() {
+	public EnumUf getUf() {
 		return uf;
 	}
 
-	public void setUf(UF uf) {
+	public void setUf(EnumUf uf) {
 		this.uf = uf;
 	}
 

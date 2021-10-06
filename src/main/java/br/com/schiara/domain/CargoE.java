@@ -12,17 +12,17 @@ import javax.persistence.Table;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "CARGOS")
-public class Cargo extends AbstractEntity<Long> {
+public class CargoE extends AbstractEntity<Long> {
 
 	@Column(name = "nome", nullable = false, unique = true, length = 60)
 	private String nome;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_departamento_fk")
-	private Departamento departamento;
+	private DepartamentoE departamento;
 	
 	@OneToMany(mappedBy = "cargo")
-	private List<Funcionario> funcionarios;
+	private List<FuncionarioE> funcionarios;
 
 	public String getNome() {
 		return nome;
@@ -32,19 +32,19 @@ public class Cargo extends AbstractEntity<Long> {
 		this.nome = nome;
 	}
 
-	public Departamento getDepartamento() {
+	public DepartamentoE getDepartamento() {
 		return departamento;
 	}
 
-	public void setDepartamento(Departamento departamento) {
+	public void setDepartamento(DepartamentoE departamento) {
 		this.departamento = departamento;
 	}
 
-	public List<Funcionario> getFuncionarios() {
+	public List<FuncionarioE> getFuncionarios() {
 		return funcionarios;
 	}
 
-	public void setFuncionarios(List<Funcionario> funcionarios) {
+	public void setFuncionarios(List<FuncionarioE> funcionarios) {
 		this.funcionarios = funcionarios;
 	}
 	

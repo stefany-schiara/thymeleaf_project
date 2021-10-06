@@ -1,6 +1,6 @@
-package br.com.schiara.domain;
+package br.com.schiara.enums;
 
-public enum UF {
+public enum EnumUf {
 	
 	AC("AC", "Acre"), 
 	AL("AL", "Alagoas"),
@@ -32,7 +32,7 @@ public enum UF {
 	private String sigla;	
 	private String descricao;
 	
-	private UF(String sigla, String descricao) {
+	private EnumUf(String sigla, String descricao) {
 		this.sigla = sigla;
 		this.descricao = descricao;
 	}

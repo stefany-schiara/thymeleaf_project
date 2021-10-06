@@ -10,19 +10,19 @@ import javax.persistence.Table;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "DEPARTAMENTOS")
-public class Departamento extends AbstractEntity<Long>{
+public class DepartamentoE extends AbstractEntity<Long>{
 
 	@Column(name = "nome", nullable = false, unique = true, length = 60)
 	private String nome;
 	
 	@OneToMany(mappedBy = "departamento")
-	private List<Cargo> cargos;
+	private List<CargoE> cargos;
 
-	public List<Cargo> getCargos() {
+	public List<CargoE> getCargos() {
 		return cargos;
 	}
 
-	public void setCargos(List<Cargo> cargos) {
+	public void setCargos(List<CargoE> cargos) {
 		this.cargos = cargos;
 	}
 
